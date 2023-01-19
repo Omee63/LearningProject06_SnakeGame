@@ -2,13 +2,19 @@ from turtle import Screen
 from snake import Snake
 import time
 
+snake = Snake()
 screen = Screen()
 screen.setup(width=600, height=600)
 screen.bgcolor("Black")
 screen.title("The Snake Game")
 screen.tracer(0)
 
-snake = Snake()
+screen.listen()
+screen.onkey(snake.up, "w")
+screen.onkey(snake.down, "s")
+screen.onkey(snake.right, "d")
+screen.onkey(snake.left, "a")
+
 game_is_on = True
 
 while game_is_on:
